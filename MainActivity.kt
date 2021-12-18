@@ -32,27 +32,24 @@ class MainActivity : AppCompatActivity() {
             wait(1000000000)
             cpuMove(removeCount)
             wait(1000000000)
-            dialogue.setText("Your turn")
+            dialogue.text = "Your turn"
 
         }
         else{val dialogue:TextView=findViewById(R.id.textView)
-            val count:TextView=findViewById(R.id.count)
-            dialogue.setText("You can't do that!")
+            dialogue.text = "You can't do that!"
         }
         if(matches==0){val dialogue:TextView=findViewById(R.id.textView)
-            val count:TextView=findViewById(R.id.count)
-            dialogue.setText("Yayy! I won")
+            dialogue.text = "Yayy! I won"
         }
 
     }
     private fun cpuMove(k:Int) {
-        if (matches == 0) {val dialogue:TextView=findViewById(R.id.textView)
-            val count:TextView=findViewById(R.id.count)
-            dialogue.setText("Yayy! I won")
+        if (matches == 0) {
+            val dialogue:TextView=findViewById(R.id.textView)
+            dialogue.text = "Yayy! I won"
         }
         else{val dialogue:TextView=findViewById(R.id.textView)
-            val count:TextView=findViewById(R.id.count)
-            dialogue.setText("I remove ${5-k} matches")
+            dialogue.text = "I remove ${5-k} matches"
             matchRemove(5-k)
 
         }
@@ -63,10 +60,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun matchRemove(x: Int) {
-        val dialogue:TextView=findViewById(R.id.textView)
         val count:TextView=findViewById(R.id.count)
         matches-=x
-        count.setText(matches.toString())
+        count.text = matches.toString()
     }
 
 }
